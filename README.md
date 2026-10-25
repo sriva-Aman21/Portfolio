@@ -1,16 +1,37 @@
-# React + Vite
+# 🚀 Aman Srivastav — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio showcasing my work in Artificial Intelligence, Machine Learning, and Data Analytics. Built with React and Vite, featuring glassmorphism UI components, interactive analytics dashboards, and production deployments.
 
-Currently, two official plugins are available:
+🔗 **Live Portfolio:** [https://sriva-aman21.github.io/Portfolio/] (https://sriva-aman21.github.io/Portfolio/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Featured Projects
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Nassau Candy Analytics Platform** — Interactive business intelligence dashboard built with Streamlit tracking KPI metrics, financial trends, and Pareto profitability diagnostics.
+* **APL Logistics Diagnostic Intelligence System** — Supply chain performance suite analyzing 180,000+ shipment records with delay gap metrics and SLA bottleneck diagnostics.
+* **120 Years of Olympic Games Analysis** — Exploratory data analytics web app visualizing historical Olympic records, medal tallies, and country-wise participation trends.
+* **Hostel Management System** — Desktop application engineered in Java Swing featuring student room allocations, billing, and local data persistence.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack & Proficiencies
+
+* **Frontend & Web:** React.js, Vite, HTML5, CSS3, JavaScript (ES6+), Lucide Icons
+* **Languages & Core:** Python, SQL, Java, Object-Oriented Programming (OOP)
+* **Data Science & ML:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Exploratory Data Analysis (EDA)
+* **BI & Tools:** Streamlit, Power BI, Git, GitHub, GitHub Pages
+
+---
+
+## 💻 Local Development Setup
+
+
+# Navigate into the project directory
+cd Portfolio
+
+# Install dependencies
+npm install
+
+# Start Vite development server
+npm run dev
