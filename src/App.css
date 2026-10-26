@@ -998,3 +998,62 @@ footer span a {
     margin-bottom: 22px !important;
   }
 }
+
+
+/* --- Streamlit Advisory Banner --- */
+.streamlit-info-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(220, 53, 69, 0.08);
+  border: 1px solid rgba(220, 53, 69, 0.25);
+  border-radius: 10px;
+  padding: 12px 20px;
+  max-width: 850px;
+  margin: 0 auto 35px auto;
+  color: #d1d5db;
+  font-size: 13.5px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.streamlit-info-banner strong {
+  color: #fff;
+}
+
+.streamlit-info-banner .banner-icon {
+  color: #dc3545;
+  flex-shrink: 0;
+}
+
+/* --- Private Repo Button in Project Links --- */
+.project-links .private-btn {
+  background: rgba(255, 255, 255, 0.07);
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.project-links .private-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .streamlit-info-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    margin-bottom: 25px;
+  }
+}

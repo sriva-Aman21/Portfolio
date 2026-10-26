@@ -7,7 +7,9 @@ import {
   ExternalLink, 
   BookOpen, 
   Layout, 
-  Database 
+  Database,
+  Lock,
+  Zap
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -29,9 +31,28 @@ const Projects = () => {
     <section className="services" id="services">
       <div className="max-width">
         <h2 className="title">Portfolio Projects</h2>
+
+        {/* --- Streamlit Sleep Advisory Banner --- */}
+        <div className="streamlit-info-banner">
+          <Zap size={18} className="banner-icon" />
+          <p>
+            <strong>Live Demo Notice:</strong> Free cloud containers enter sleep mode after inactivity. If an app is asleep, click <strong>"Yes, get this app back up!"</strong> to wake the live container (~15–20s).
+          </p>
+        </div>
+
         <div className="serv-content">
           {projects.map((project) => {
             const IconComponent = iconMap[project.icon] || Code;
+
+            // Check if this project is one of your private repos or marked as private
+            const isPrivateRepo = 
+              project.isPrivate || 
+              project.githubUrl === '#' || 
+              !project.githubUrl ||
+              project.title.toLowerCase().includes('olympic') ||
+              project.title.toLowerCase().includes('nassau') ||
+              project.title.toLowerCase().includes('apl') ||
+              project.title.toLowerCase().includes('supply chain');
 
             return (
               <div className="card" key={project.id}>
@@ -51,18 +72,6 @@ const Projects = () => {
                   </div>
 
                   <div className="project-links">
-                    {/* GitHub / Source Code Button */}
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Code size={15} />
-                        <span>Code</span>
-                      </a>
-                    )}
-
                     {/* Live Deployed Streamlit / Web App Button */}
                     {project.liveUrl && project.liveUrl !== '#' && (
                       <a
@@ -76,7 +85,7 @@ const Projects = () => {
                       </a>
                     )}
 
-                    {/* Google Colab Notebook Link (if applicable) */}
+                    {/* Google Colab Link (if available) */}
                     {project.colabUrl && (
                       <a
                         href={project.colabUrl}
@@ -87,6 +96,29 @@ const Projects = () => {
                         <BookOpen size={15} />
                         <span>Colab</span>
                       </a>
+                    )}
+
+                    {/* GitHub Code vs Private Repo Access Button */}
+                    {isPrivateRepo ? (
+                      <a
+                        href={`mailto:aman21sriva@gmail.com?subject=Source%20Code%20Access%20Request%20-%20${encodeURIComponent(project.title)}`}
+                        className="private-btn"
+                        title="Repository is private. Click to request direct collaborator access."
+                      >
+                        <Lock size={14} />
+                        <span>Private Repo • Access on Request</span>
+                      </a>
+                    ) : (
+                      project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Code size={15} />
+                          <span>Code</span>
+                        </a>
+                      )
                     )}
                   </div>
                 </div>
